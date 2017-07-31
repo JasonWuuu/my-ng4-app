@@ -3,3 +3,15 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+
+ul.navigation li {
+  width: 100px;
+  background: dodgerblue;
+  margin: 10px 0px;
+  display: inline-block;
+}
+
+ul.navigation li a{
+   color: white;
+   display: block;
+}

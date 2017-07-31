@@ -1,0 +1,27 @@
+<p>
+  my-new-component works!
+</p>
+
+<button class='btn btn-default' (click)="sendMessage()">SendMessage</button>
+<button class='btn btn-default' (click)="clearMessage()">ClearMessage</button>
+
+<div class='ngNonBindableDemo'>
+    <span class="bordered">{{ content }}</span>
+    <span class="pre" ngNonBindable>
+      &larr; This is what {{ content }} rendered
+    </span>
+</div>
+
+<ng-template #hidden>
+  <p>You are not allowed to see our secret</p>
+</ng-template>
+<p *ngIf="shown; else hidden">
+  Our secret is being happy
+</p>
+<hr/>
+<ng-template #fetching>
+      <p>Fetching...</p>
+   </ng-template>
+<div *ngIf="auth| async; else fetching; let user">
+{{user|json}}
+</div>
