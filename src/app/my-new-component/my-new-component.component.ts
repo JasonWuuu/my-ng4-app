@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../services/message.service';
-import{Observable} from 'Rxjs';
+import { Observable } from 'Rxjs';
 
 @Component({
   selector: 'app-my-new-component',
@@ -9,20 +9,29 @@ import{Observable} from 'Rxjs';
 })
 export class MyNewComponentComponent implements OnInit {
 
-  constructor(private messageService:MessageService) { }
+  fruids: string[] = ['a', 'b', 'c'];
+  foods: string[] = [...this.fruids, 'd'];
 
-  auth:any;
+  constructor(private messageService: MessageService) { }
+
+  auth: any;
   ngOnInit() {
-     this.auth = Observable
+    this.auth = Observable
       .of({ username: 'semlinker', password: 'segmentfault' })
       .delay(new Date(Date.now() + 2000));
   }
-sendMessage(){
-  this.messageService.sendMessage("this is congcong");
-}
+  sendMessage() {
+    this.messageService.sendMessage('this is congcong');
+  }
 
-clearMessage(){
-  this.messageService.clearMessage();
-}
+  clearMessage() {
+    this.messageService.clearMessage();
+    this.ngOnInit();
+  }
+
+  createMessage() {
+    return null;
+  }
+
 
 }
