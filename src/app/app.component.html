@@ -2,12 +2,12 @@
 <h2>Here are some links to help you start: </h2>
 <!-- main app container -->
 <div class="jumbotron">
-    <div class="container">
-        <div class="col-sm-8 col-sm-offset-2">
-            <div *ngIf="message" class="alert alert-success">{{message.text}}</div>
-            <router-outlet></router-outlet>
-        </div>
+  <div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div *ngIf="message" class="alert alert-success">{{message.text}}</div>
+      <router-outlet></router-outlet>
     </div>
+  </div>
 </div>
 <ul class="navigation">
   <!-- <li>
@@ -19,13 +19,21 @@
   <li>
     <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
   </li> -->
-  <li  style="display:inline-block;">
+  <li style="display:inline-block;">
     <h2> <a routerLink="/">demo1</a></h2>
   </li>
-  <li  style="display:inline-block;">
+  <li style="display:inline-block;">
     <h2> <a routerLink="/new">new</a></h2>
+  </li>
+  <li style="display:inline-block;">
+    <h2> <a routerLink="/debounce">debounce</a></h2>
+  </li>
+  <li style="display:inline-block;">
+    <h2> <a routerLink="/httpclient">httpclient</a></h2>
+  </li>
+  <li style="display:inline-block;">
+    <h2> <a routerLink="/forkjoin">forkjoin</a></h2>
   </li>
 </ul>
 <hr/>
 <router-outlet></router-outlet>
-

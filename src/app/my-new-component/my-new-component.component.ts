@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../services/message.service';
-import { Observable } from 'Rxjs';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
 
 @Component({
   selector: 'app-my-new-component',
