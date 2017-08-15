@@ -15,6 +15,8 @@ import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './services/auth-interceptor';
 import { ForkJoinDemoComponent } from './fork-join-demo/fork-join-demo.component';
 import { UserService } from './services/user.service';
+import './common/custom-operator';
+import { HttpDemoComponent } from './http-demo/http-demo.component';
 
 const appRoutes: Routes = [
   { path: '', component: Demo1ComponentComponent },
@@ -22,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'debounce', component: DebounceClickDemoComponent },
   { path: 'httpclient', component: HttpClientDemoComponent },
   { path: 'forkjoin', component: ForkJoinDemoComponent },
+  { path: 'http', component: HttpDemoComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
     DebounceClickDirective,
     DebounceClickDemoComponent,
     HttpClientDemoComponent,
-    ForkJoinDemoComponent
+    ForkJoinDemoComponent,
+    HttpDemoComponent
   ],
   imports: [
     BrowserModule,

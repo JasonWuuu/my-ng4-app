@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { UserService } from '../services/user.service';
 export class ForkJoinDemoComponent implements OnInit {
   firstUser: any;
   firstPost: any;
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -25,9 +26,7 @@ export class ForkJoinDemoComponent implements OnInit {
       this.firstUser = item[0][0];
       this.firstPost = item[1][0];
     });
+
   }
-
-
-
 
 }
