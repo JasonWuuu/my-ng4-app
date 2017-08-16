@@ -17,6 +17,10 @@ import { ForkJoinDemoComponent } from './fork-join-demo/fork-join-demo.component
 import { UserService } from './services/user.service';
 import './common/custom-operator';
 import { HttpDemoComponent } from './http-demo/http-demo.component';
+import { AsyncAwaitDemoComponent } from './async-await-demo/async-await-demo.component';
+import { GenericDemoComponent } from './generic-demo/generic-demo.component';
+import { TupleDemoComponent } from './tuple-demo/tuple-demo.component';
+import { ExtendObjDemoComponent } from './extend-obj-demo/extend-obj-demo.component';
 
 const appRoutes: Routes = [
   { path: '', component: Demo1ComponentComponent },
@@ -25,6 +29,10 @@ const appRoutes: Routes = [
   { path: 'httpclient', component: HttpClientDemoComponent },
   { path: 'forkjoin', component: ForkJoinDemoComponent },
   { path: 'http', component: HttpDemoComponent },
+  { path: 'async', component: AsyncAwaitDemoComponent },
+  { path: 'generic', component: GenericDemoComponent },
+  { path: 'tuple', component: TupleDemoComponent },
+  { path: 'extend', component: ExtendObjDemoComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -47,7 +55,11 @@ const appRoutes: Routes = [
     DebounceClickDemoComponent,
     HttpClientDemoComponent,
     ForkJoinDemoComponent,
-    HttpDemoComponent
+    HttpDemoComponent,
+    AsyncAwaitDemoComponent,
+    GenericDemoComponent,
+    TupleDemoComponent,
+    ExtendObjDemoComponent
   ],
   imports: [
     BrowserModule,
