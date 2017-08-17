@@ -10,17 +10,17 @@ import { Subscription } from 'rxjs/Subscription';
 export class AppComponent implements OnDestroy {
   title = 'ng4 app';
   message: any;
-  // subscription: Subscription;
+  subscription: Subscription;
   constructor(private messageService: MessageService) {
-    // this.subscription = this.messageService.getMessage().subscribe(message => {
-    //   this.message = message;
-    // });
+    this.subscription = this.messageService.getMessage().subscribe(message => {
+      this.message = message;
+    });
 
   }
 
   ngOnDestroy() {
 
-    // this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
 
   }
 
