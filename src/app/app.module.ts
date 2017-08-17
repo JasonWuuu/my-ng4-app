@@ -21,9 +21,14 @@ import { AsyncAwaitDemoComponent } from './async-await-demo/async-await-demo.com
 import { GenericDemoComponent } from './generic-demo/generic-demo.component';
 import { TupleDemoComponent } from './tuple-demo/tuple-demo.component';
 import { ExtendObjDemoComponent } from './extend-obj-demo/extend-obj-demo.component';
+import { RouteDemoComponent } from './route-demo/route-demo.component';
+// import { ProfileDemoComponent } from './profile-demo/profile-demo.component';
+// import { PasswordDemoComponent } from './password-demo/password-demo.component';
+
 
 const appRoutes: Routes = [
-  { path: '', component: Demo1ComponentComponent },
+  { path: '', redirectTo: 'demo', pathMatch: 'prefix' },
+  { path: 'demo', component: Demo1ComponentComponent },
   { path: 'new', component: MyNewComponentComponent },
   { path: 'debounce', component: DebounceClickDemoComponent },
   { path: 'httpclient', component: HttpClientDemoComponent },
@@ -33,6 +38,14 @@ const appRoutes: Routes = [
   { path: 'generic', component: GenericDemoComponent },
   { path: 'tuple', component: TupleDemoComponent },
   { path: 'extend', component: ExtendObjDemoComponent },
+  {
+    path: 'route', component: RouteDemoComponent,
+    // children: [
+    //   { path: 'profile/:username', component: ProfileDemoComponent },
+    //   { path: 'password', component: PasswordDemoComponent },
+    // ]
+  },
+  { path: 'setting', loadChildren: './setting/setting.module#SettingModule' },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -59,7 +72,9 @@ const appRoutes: Routes = [
     AsyncAwaitDemoComponent,
     GenericDemoComponent,
     TupleDemoComponent,
-    ExtendObjDemoComponent
+    ExtendObjDemoComponent,
+    RouteDemoComponent,
+
   ],
   imports: [
     BrowserModule,
