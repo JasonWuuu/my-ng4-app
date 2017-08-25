@@ -22,8 +22,15 @@ import { GenericDemoComponent } from './generic-demo/generic-demo.component';
 import { TupleDemoComponent } from './tuple-demo/tuple-demo.component';
 import { ExtendObjDemoComponent } from './extend-obj-demo/extend-obj-demo.component';
 import { RouteDemoComponent } from './route-demo/route-demo.component';
+import { InjectDemoComponent } from './inject-demo/inject-demo.component';
+import { LogService, ConsoleService, ValueDemoService } from './services/log.service';
+import { UrlsService } from './services/urls.service';
+import { HashLocationComponent } from './hash-location/hash-location.component';
 // import { ProfileDemoComponent } from './profile-demo/profile-demo.component';
 // import { PasswordDemoComponent } from './password-demo/password-demo.component';
+import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
+import { DynamicCompComponent } from './dynamic-comp/dynamic-comp.component';
+
 
 
 const appRoutes: Routes = [
@@ -38,6 +45,8 @@ const appRoutes: Routes = [
   { path: 'generic', component: GenericDemoComponent },
   { path: 'tuple', component: TupleDemoComponent },
   { path: 'extend', component: ExtendObjDemoComponent },
+  { path: 'hash', component: HashLocationComponent },
+  { path: 'dynamic-comp', component: DynamicCompComponent },
   {
     path: 'route', component: RouteDemoComponent,
     // children: [
@@ -45,6 +54,7 @@ const appRoutes: Routes = [
     //   { path: 'password', component: PasswordDemoComponent },
     // ]
   },
+  { path: 'inject', component: InjectDemoComponent },
   { path: 'setting', loadChildren: './setting/setting.module#SettingModule' },
   // {
   //   path: 'heroes',
@@ -74,6 +84,9 @@ const appRoutes: Routes = [
     TupleDemoComponent,
     ExtendObjDemoComponent,
     RouteDemoComponent,
+    InjectDemoComponent,
+    HashLocationComponent,
+    DynamicCompComponent,
 
   ],
   imports: [
@@ -87,12 +100,21 @@ const appRoutes: Routes = [
   ],
   providers: [MessageService,
     AuthService,
+    ConsoleService,
+    ValueDemoService,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    UserService
+    // { provide: LogService, useFactory: (consoleService) => new LogService(false, consoleService), deps: [ConsoleService] },
+    { provide: LogService, useFactory: () => new LogService(false), deps: [] },
+    { provide: UrlsService, useFactory: () => new UrlsService('DEV') },
+    { provide: 'appName', useValue: 'CongApp' },
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
 
 
 
