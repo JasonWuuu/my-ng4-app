@@ -3,37 +3,37 @@ import {
   ComponentFactoryResolver, ComponentRef, ViewContainerRef
 } from '@angular/core';
 
-@Component({
-  selector: 'app-exe-alert',
-  template: ``
-})
-export class AlertComponent implements OnInit {
+// @Component({
+//   selector: 'app-exe-alert',
+//   template: ``
+// })
+// export class AlertComponent implements OnInit {
 
-  constructor() {
+//   constructor() {
 
-  }
+//   }
 
-  ngOnInit() {
+//   ngOnInit() {
 
-  }
+//   }
 
-}
+// }
 
-@Component({
-  selector: 'app-exe-div',
-  template: ``
-})
-export class DivComponent implements OnInit {
+// @Component({
+//   selector: 'app-exe-div',
+//   template: ``
+// })
+// export class DivComponent implements OnInit {
 
-  constructor() {
+//   constructor() {
 
-  }
+//   }
 
-  ngOnInit() {
+//   ngOnInit() {
 
-  }
+//   }
 
-}
+// }
 
 @Component({
   selector: 'app-dynamic-comp',

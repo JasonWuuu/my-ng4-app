@@ -5,10 +5,10 @@ export class UrlsService {
   Urls: any;
   constructor(private env: string) {
     // this.populateUrls();
-    const u: IUrlService = new StageUrlService();
-    console.log(JSON.stringify(u.Urls));
+    // const u: IUrlService = new StageUrlService();
+    // console.log(JSON.stringify(u.Urls));
 
-    const s: ProdUrlService = new ProdUrlService();
+    // const s: ProdUrlService = new ProdUrlService();
 
   }
 

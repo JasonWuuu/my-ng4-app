@@ -8,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Demo1ComponentComponent implements OnInit {
 
-  constructor() { }
+  isShow = false;
+  msg = 'Hello World';
+  userList = ['a', 'b', 'c'];
+  currentDate = new Date();
+
+  constructor() {
+
+  }
+
+  submit() {
+    console.log(Math.random());
+  }
 
   ngOnInit() {
     // let subject=new Subject();

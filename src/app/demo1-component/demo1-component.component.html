@@ -1,3 +1,31 @@
 <p>
   demo1-component works!
 </p>
+
+<div>{{msg}}</div>
+<div [id]="msg"></div>
+<div *ngIf="isShow"></div>
+<select class="form-control">
+	<option *ngFor="let user of userList" [value]="user">{{user|json}}</option>
+    </select>
+  <br>
+<input type="text" [(ngModel)]="msg"  class="form-control"/>
+<!-- [ngModel] & (ngModelChange) -->
+<div [ngSwitch]="isShow">
+  <div *ngSwitchCase="true">show</div>
+  <div *ngSwitchCase="false">hide</div>
+</div>
+
+<button (click)="submit()" class="btn btn-primary">Click</button>
+
+
+<div [class.msgWarnning]="true">Hello</div>
+<p [style.color]="'green'">Hello</p>
+<p [ngClass]="{msgWarnning:true}">Hello</p>
+<p [ngStyle]="{backgroundColor:'green'}">Hello</p>
+<p [ngStyle]="{'background-color':'yellow'}">Hello</p>
+
+<div>
+  the choose date is:{{currentDate}} <button (click)="showDataPicker=!showDataPicker" class="btn btn-primary">chooseDate</button>
+  <app-date-picker *ngIf="showDataPicker" [date]='currentDate' (chooseDate)="currentDate=$event; showDataPicker=false;"></app-date-picker>
+</div>

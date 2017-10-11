@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgModel, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -30,6 +30,8 @@ import { HashLocationComponent } from './hash-location/hash-location.component';
 // import { PasswordDemoComponent } from './password-demo/password-demo.component';
 import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@angular/common';
 import { DynamicCompComponent } from './dynamic-comp/dynamic-comp.component';
+import { NgChangeDemoComponent, NestedComponent } from './ng-change-demo/ng-change-demo.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
 
@@ -47,6 +49,7 @@ const appRoutes: Routes = [
   { path: 'extend', component: ExtendObjDemoComponent },
   { path: 'hash', component: HashLocationComponent },
   { path: 'dynamic-comp', component: DynamicCompComponent },
+  { path: 'onchange-demo', component: NgChangeDemoComponent },
   {
     path: 'route', component: RouteDemoComponent,
     // children: [
@@ -71,7 +74,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NgModel,
     MyNewComponentComponent,
     Demo1ComponentComponent,
     DebounceClickDirective,
@@ -87,11 +89,14 @@ const appRoutes: Routes = [
     InjectDemoComponent,
     HashLocationComponent,
     DynamicCompComponent,
-
+    NgChangeDemoComponent,
+    NestedComponent,
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
@@ -105,8 +110,8 @@ const appRoutes: Routes = [
     UserService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     // { provide: LogService, useFactory: (consoleService) => new LogService(false, consoleService), deps: [ConsoleService] },
-    { provide: LogService, useFactory: () => new LogService(false), deps: [] },
-    { provide: UrlsService, useFactory: () => new UrlsService('DEV') },
+    // { provide: LogService, useFactory: () => new LogService(false), deps: [] },
+    // { provide: UrlsService, useFactory: () => new UrlsService('DEV') },
     { provide: 'appName', useValue: 'CongApp' },
     { provide: LocationStrategy, useClass: PathLocationStrategy },
   ],
