@@ -3,6 +3,7 @@ import {
   ComponentFactoryResolver, ComponentRef, ViewContainerRef
 } from '@angular/core';
 
+// #region DynamicCompComponent
 // @Component({
 //   selector: 'app-exe-alert',
 //   template: ``
@@ -34,6 +35,8 @@ import {
 //   }
 
 // }
+
+//#endregion
 
 @Component({
   selector: 'app-dynamic-comp',
