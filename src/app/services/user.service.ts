@@ -21,6 +21,7 @@ export class UserService {
 
   public getUserListSnapShot() {
     return this.getUserList().toPromise(); // we'd better to return promise to retrieve data for api
+  // return Observable.fromPromise(this.getUserList().toPromise());
   }
 }
 

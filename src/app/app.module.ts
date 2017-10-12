@@ -113,7 +113,7 @@ const appRoutes: Routes = [
     // { provide: LogService, useFactory: () => new LogService(false), deps: [] },
     // { provide: UrlsService, useFactory: () => new UrlsService('DEV') },
     { provide: 'appName', useValue: 'CongApp' },
-    { provide: LocationStrategy, useClass: PathLocationStrategy },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent]
 })

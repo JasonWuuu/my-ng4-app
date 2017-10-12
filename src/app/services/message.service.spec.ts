@@ -37,4 +37,10 @@ describe('MessageService', () => {
     //   expect(userList.length).toEqual(6);
     // });
   });
+
+  it('should have 6 items in getUserList 2',  () => {
+    messageService.getUserList().subscribe(userList => {
+      expect(userList.length).toEqual(6);
+    });
+  });
 });

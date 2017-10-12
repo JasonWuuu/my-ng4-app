@@ -18,8 +18,10 @@ export class Demo1ComponentComponent implements OnInit {
   }
 
   submit() {
+
     console.log(Math.random());
   }
+
 
   ngOnInit() {
     // let subject=new Subject();
