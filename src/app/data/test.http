@@ -5,6 +5,7 @@
 @mycomment= http://localhost:3000/comments
 ###
 
+### first install the "REST client" plugin in vscode.
 GET {{baidu}} HTTP/1.1
 ###
 GET {{sina}} HTTP/1.1
