@@ -32,6 +32,7 @@ import { LocationStrategy, HashLocationStrategy, PathLocationStrategy } from '@a
 import { DynamicCompComponent } from './dynamic-comp/dynamic-comp.component';
 import { NgChangeDemoComponent, NestedComponent } from './ng-change-demo/ng-change-demo.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
   },
   { path: 'inject', component: InjectDemoComponent },
   { path: 'setting', loadChildren: './setting/setting.module#SettingModule' },
+  { path: 'upload', component: UploadComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -92,6 +94,7 @@ const appRoutes: Routes = [
     NgChangeDemoComponent,
     NestedComponent,
     DatePickerComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,

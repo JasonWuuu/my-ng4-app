@@ -1,0 +1,14 @@
+<p>
+  upload works!
+</p>
+
+<div class="form-group">
+  <label class="upload-label font-weight-bold">
+    selectFileName
+  </label>
+  <div class="file-input-border file-input-bg-color">
+    <input #selectedFile type="file" class="file-dropzone" required (change)="fileChangeEvent($event)"
+      accept="audio/*,video/*,image/*,application/msword,application/vnd.ms-excel,application/pdf" />
+  </div>
+
+</div>
